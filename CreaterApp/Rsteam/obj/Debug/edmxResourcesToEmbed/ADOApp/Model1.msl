@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище RsteamModelContainer" CdmEntityContainer="RsteamEntities">
+    <EntitySetMapping Name="Balances">
+      <EntityTypeMapping TypeName="RsteamModel.Balances">
+        <MappingFragment StoreEntitySet="Balances">
+          <ScalarProperty Name="id_balance" ColumnName="id_balance" />
+          <ScalarProperty Name="User_id" ColumnName="User_id" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Blocet">
+      <EntityTypeMapping TypeName="RsteamModel.Blocet">
+        <MappingFragment StoreEntitySet="Blocet">
+          <ScalarProperty Name="Id_blocet" ColumnName="Id_blocet" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Creaters">
+      <EntityTypeMapping TypeName="RsteamModel.Creaters">
+        <MappingFragment StoreEntitySet="Creaters">
+          <ScalarProperty Name="Id_creater" ColumnName="Id_creater" />
+          <ScalarProperty Name="Prodaction_id" ColumnName="Prodaction_id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="User_id" ColumnName="User_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Feivarit">
+      <EntityTypeMapping TypeName="RsteamModel.Feivarit">
+        <MappingFragment StoreEntitySet="Feivarit">
+          <ScalarProperty Name="id_feit" ColumnName="id_feit" />
+          <ScalarProperty Name="User_id" ColumnName="User_id" />
+          <ScalarProperty Name="Game_id" ColumnName="Game_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GameComments">
+      <EntityTypeMapping TypeName="RsteamModel.GameComments">
+        <MappingFragment StoreEntitySet="GameComments">
+          <ScalarProperty Name="id_GameComment" ColumnName="id_GameComment" />
+          <ScalarProperty Name="Text" ColumnName="Text" />
+          <ScalarProperty Name="User_id" ColumnName="User_id" />
+          <ScalarProperty Name="Game_id" ColumnName="Game_id" />
+          <ScalarProperty Name="IsBlocet" ColumnName="IsBlocet" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Librarys">
+      <EntityTypeMapping TypeName="RsteamModel.Librarys">
+        <MappingFragment StoreEntitySet="Librarys">
+          <ScalarProperty Name="id_library" ColumnName="id_library" />
+          <ScalarProperty Name="User_id" ColumnName="User_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LibrarysGames">
+      <EntityTypeMapping TypeName="RsteamModel.LibrarysGames">
+        <MappingFragment StoreEntitySet="LibrarysGames">
+          <ScalarProperty Name="id_LibGame" ColumnName="id_LibGame" />
+          <ScalarProperty Name="Game_id" ColumnName="Game_id" />
+          <ScalarProperty Name="Library_id" ColumnName="Library_id" />
+          <ScalarProperty Name="LastStartDate" ColumnName="LastStartDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Prodactions">
+      <EntityTypeMapping TypeName="RsteamModel.Prodactions">
+        <MappingFragment StoreEntitySet="Prodactions">
+          <ScalarProperty Name="id_prodaction" ColumnName="id_prodaction" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Reiteg">
+      <EntityTypeMapping TypeName="RsteamModel.Reiteg">
+        <MappingFragment StoreEntitySet="Reiteg">
+          <ScalarProperty Name="id_reiting" ColumnName="id_reiting" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Roles">
+      <EntityTypeMapping TypeName="RsteamModel.Roles">
+        <MappingFragment StoreEntitySet="Roles">
+          <ScalarProperty Name="id_role" ColumnName="id_role" />
+          <ScalarProperty Name="Titlel" ColumnName="Titlel" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="RsteamModel.Users">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="id_user" ColumnName="id_user" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="XName" ColumnName="XName" />
+          <ScalarProperty Name="Login" ColumnName="Login" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
+          <ScalarProperty Name="Role_id" ColumnName="Role_id" />
+          <ScalarProperty Name="IsBlocet" ColumnName="IsBlocet" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Games">
+      <EntityTypeMapping TypeName="RsteamModel.Games">
+        <MappingFragment StoreEntitySet="Games">
+          <ScalarProperty Name="PathFoGame" ColumnName="PathFoGame" />
+          <ScalarProperty Name="IsBlocet" ColumnName="IsBlocet" />
+          <ScalarProperty Name="Reiting_id" ColumnName="Reiting_id" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="DataCreate" ColumnName="DataCreate" />
+          <ScalarProperty Name="prodaction_id" ColumnName="prodaction_id" />
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="id_game" ColumnName="id_game" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
