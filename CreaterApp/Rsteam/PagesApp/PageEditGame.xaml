@@ -12,7 +12,10 @@
         <StackPanel>
             <TextBox Text="{Binding Title}"/>
             <TextBox Text="{Binding Price}"/>
-            <Image Source="{Binding Photo}" Width="150" Height="150" x:Name="ImaGeGame"/>
+            <ScrollViewer Height="150">
+                <TextBox Text="{Binding Diskription}" TextWrapping="Wrap" />
+                </ScrollViewer>
+                <Image Source="{Binding Photo}" Width="150" Height="150" x:Name="ImaGeGame"/>
             <Button Content="Edit photo" Click="ClEventditPhoto"/>
             <Button Content="Save Edits" Click="ClEventSaveChang"/>
         </StackPanel> 

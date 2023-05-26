@@ -125,9 +125,6 @@
     <Compile Include="ADOApp\Games.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="ADOApp\Librarys.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
     <Compile Include="ADOApp\LibrarysGames.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>

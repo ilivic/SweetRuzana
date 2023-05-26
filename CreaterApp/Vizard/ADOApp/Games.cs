@@ -31,6 +31,7 @@ namespace Vizard.ADOApp
         public int Reiting_id { get; set; }
         public Nullable<int> IsBlocet { get; set; }
         public string PathFoGame { get; set; }
+        public string Diskription { get; set; }
     
         public virtual Blocet Blocet { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

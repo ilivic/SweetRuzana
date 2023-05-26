@@ -34,6 +34,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>png-transparent-eye-icon-eye-service-people-logo-thumbnail.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
@@ -113,37 +116,37 @@
       <SubType>Designer</SubType>
     </Page>
     <Compile Include="ADOApp\AnswerAppeal.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>ModelVizard.tt</DependentUpon>
     </Compile>
     <Compile Include="ADOApp\Appeal.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>ModelVizard.tt</DependentUpon>
     </Compile>
     <Compile Include="ADOApp\AppealCloseType.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>ModelVizard.tt</DependentUpon>
     </Compile>
     <Compile Include="ADOApp\Balances.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>ModelVizard.tt</DependentUpon>
     </Compile>
     <Compile Include="ADOApp\Blocet.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>ModelVizard.tt</DependentUpon>
     </Compile>
     <Compile Include="ADOApp\Creaters.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>ModelVizard.tt</DependentUpon>
     </Compile>
     <Compile Include="ADOApp\Feivarit.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>ModelVizard.tt</DependentUpon>
     </Compile>
     <Compile Include="ADOApp\GameComments.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>ModelVizard.tt</DependentUpon>
     </Compile>
     <Compile Include="ADOApp\Games.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>ModelVizard.tt</DependentUpon>
     </Compile>
     <Compile Include="ADOApp\Librarys.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>ModelVizard.tt</DependentUpon>
     </Compile>
     <Compile Include="ADOApp\LibrarysGames.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>ModelVizard.tt</DependentUpon>
     </Compile>
     <Compile Include="ADOApp\Model1.Context.cs">
       <AutoGen>True</AutoGen>
@@ -176,19 +179,19 @@
       <DependentUpon>ModelVizard.edmx</DependentUpon>
     </Compile>
     <Compile Include="ADOApp\Prodactions.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>ModelVizard.tt</DependentUpon>
     </Compile>
     <Compile Include="ADOApp\Reiteg.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>ModelVizard.tt</DependentUpon>
     </Compile>
     <Compile Include="ADOApp\Roles.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>ModelVizard.tt</DependentUpon>
     </Compile>
     <Compile Include="ADOApp\sysdiagrams.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>ModelVizard.tt</DependentUpon>
     </Compile>
     <Compile Include="ADOApp\Users.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>ModelVizard.tt</DependentUpon>
     </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
@@ -296,6 +299,7 @@
       <DependentUpon>ModelVizard.edmx</DependentUpon>
       <LastGenOutput>ModelVizard.cs</LastGenOutput>
     </Content>
+    <Resource Include="png-transparent-eye-icon-eye-service-people-logo-thumbnail.ico" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

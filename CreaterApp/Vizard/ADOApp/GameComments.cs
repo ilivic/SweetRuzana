@@ -21,7 +21,7 @@ namespace Vizard.ADOApp
         public int IsBlocet { get; set; }
     
         public virtual Blocet Blocet { get; set; }
-        public virtual Games Games { get; set; }
         public virtual Users Users { get; set; }
+        public virtual Games Games { get; set; }
     }
 }

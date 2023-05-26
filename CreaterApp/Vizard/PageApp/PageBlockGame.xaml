@@ -13,6 +13,10 @@
             <Image Source="{Binding Photo}" Width="150" Height="150"/>
             <TextBlock Text="{Binding Title}" />
             <TextBlock Text="{Binding Prodaction.Title}"/>
+            <ScrollViewer Height="150">
+                <TextBlock Text="{Binding Diskription}" TextWrapping="Wrap" />
+            </ScrollViewer>
+
             <ComboBox x:Name="CMBStatValue" SelectionChanged="CMBStatValue_SelectionChanged">
                 <ComboBox.ItemTemplate>
                     <DataTemplate>

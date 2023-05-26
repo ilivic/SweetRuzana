@@ -53,14 +53,6 @@
     <NavigationProperty Name="Users" Relationship="Self.FK_GameComments_Users" FromRole="GameComments" ToRole="Users" />
     <NavigationProperty Name="Games" Relationship="RsteamModel.FK_GameComments_Games" FromRole="GameComments" ToRole="Games" />
   </EntityType>
-  <EntityType Name="Librarys">
-    <Key>
-      <PropertyRef Name="id_library" />
-    </Key>
-    <Property Name="id_library" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="User_id" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="LibrarysGames" Relationship="Self.FK_LibrarysGames_Librarys" FromRole="Librarys" ToRole="LibrarysGames" />
-  </EntityType>
   <EntityType Name="LibrarysGames">
     <Key>
       <PropertyRef Name="id_LibGame" />
@@ -69,7 +61,6 @@
     <Property Name="Game_id" Type="Int32" Nullable="false" />
     <Property Name="Library_id" Type="Int32" Nullable="false" />
     <Property Name="LastStartDate" Type="DateTime" Precision="3" />
-    <NavigationProperty Name="Librarys" Relationship="Self.FK_LibrarysGames_Librarys" FromRole="LibrarysGames" ToRole="Librarys" />
     <NavigationProperty Name="Games" Relationship="RsteamModel.FK_LibrarysGames_Games" FromRole="LibrarysGames" ToRole="Games" />
   </EntityType>
   <EntityType Name="Prodactions">
@@ -200,18 +191,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_LibrarysGames_Librarys">
-    <End Role="Librarys" Type="Self.Librarys" Multiplicity="1" />
-    <End Role="LibrarysGames" Type="Self.LibrarysGames" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Librarys">
-        <PropertyRef Name="id_library" />
-      </Principal>
-      <Dependent Role="LibrarysGames">
-        <PropertyRef Name="Library_id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_Users_Roles">
     <End Role="Roles" Type="Self.Roles" Multiplicity="1" />
     <End Role="Users" Type="Self.Users" Multiplicity="*" />
@@ -230,7 +209,6 @@
     <EntitySet Name="Creaters" EntityType="Self.Creaters" />
     <EntitySet Name="Feivarit" EntityType="Self.Feivarit" />
     <EntitySet Name="GameComments" EntityType="Self.GameComments" />
-    <EntitySet Name="Librarys" EntityType="Self.Librarys" />
     <EntitySet Name="LibrarysGames" EntityType="Self.LibrarysGames" />
     <EntitySet Name="Prodactions" EntityType="Self.Prodactions" />
     <EntitySet Name="Reiteg" EntityType="Self.Reiteg" />
@@ -263,10 +241,6 @@
     <AssociationSet Name="FK_GameComments_Users" Association="Self.FK_GameComments_Users">
       <End Role="Users" EntitySet="Users" />
       <End Role="GameComments" EntitySet="GameComments" />
-    </AssociationSet>
-    <AssociationSet Name="FK_LibrarysGames_Librarys" Association="Self.FK_LibrarysGames_Librarys">
-      <End Role="Librarys" EntitySet="Librarys" />
-      <End Role="LibrarysGames" EntitySet="LibrarysGames" />
     </AssociationSet>
     <AssociationSet Name="FK_Users_Roles" Association="Self.FK_Users_Roles">
       <End Role="Roles" EntitySet="Roles" />
@@ -311,6 +285,7 @@
     <Property Name="Reiting_id" Type="Int32" Nullable="false" />
     <Property Name="IsBlocet" Type="Int32" />
     <Property Name="PathFoGame" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Diskription" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="Blocet" Relationship="RsteamModel.FK_Games_Blocet" FromRole="Games" ToRole="Blocet" />
     <NavigationProperty Name="Feivarit" Relationship="RsteamModel.FK_Feivarit_Games" FromRole="Games" ToRole="Feivarit" />
     <NavigationProperty Name="GameComments" Relationship="RsteamModel.FK_GameComments_Games" FromRole="Games" ToRole="GameComments" />

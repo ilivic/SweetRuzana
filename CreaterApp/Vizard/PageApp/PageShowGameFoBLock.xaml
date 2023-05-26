@@ -32,12 +32,15 @@
         <ListView x:Name="ListGame" Grid.Row="1" SelectionChanged="ListView_SelectionChanged">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <StackPanel>
-                        <StackPanel Orientation="Horizontal">
+                    <StackPanel Orientation="Horizontal">
+                        <StackPanel>
                             <Image Source="{Binding Photo}" Width="150" Height="150"/>
                         </StackPanel>
                         <StackPanel>
                             <TextBlock Text="{Binding Title,StringFormat='Название {0}'}"/>
+                            <ScrollViewer Height="150" Width="300">
+                                <TextBlock Text="{Binding Diskription}" TextWrapping="Wrap" />
+                            </ScrollViewer>
                             <TextBlock Text="{Binding Price,StringFormat='Цена {0}'}"/>
                             <TextBlock Text="{Binding Prodactions.Title,StringFormat='Выпущено от лица {0}'}"/>
                             <TextBlock Text="{Binding Blocet.Title,StringFormat='Статус блокировки {0}'}"/>

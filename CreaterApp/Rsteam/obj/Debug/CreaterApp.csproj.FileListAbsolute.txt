@@ -82,3 +82,45 @@ C:\Users\KOTIK\Desktop\wa\SweetRuzana\CreaterApp\Rsteam\obj\Debug\CreaterApp.csp
 C:\Users\KOTIK\Desktop\wa\SweetRuzana\CreaterApp\Rsteam\obj\Debug\CreaterApp.csproj.CopyComplete
 C:\Users\KOTIK\Desktop\wa\SweetRuzana\CreaterApp\Rsteam\obj\Debug\Rsteam.exe
 C:\Users\KOTIK\Desktop\wa\SweetRuzana\CreaterApp\Rsteam\obj\Debug\Rsteam.pdb
+C:\Users\ilivic911\Desktop\Новая папка\SweetRuzana\CreaterApp\Rsteam\bin\Debug\Rsteam.exe.config
+C:\Users\ilivic911\Desktop\Новая папка\SweetRuzana\CreaterApp\Rsteam\bin\Debug\Rsteam.exe
+C:\Users\ilivic911\Desktop\Новая папка\SweetRuzana\CreaterApp\Rsteam\bin\Debug\Rsteam.pdb
+C:\Users\ilivic911\Desktop\Новая папка\SweetRuzana\CreaterApp\Rsteam\bin\Debug\EntityFramework.dll
+C:\Users\ilivic911\Desktop\Новая папка\SweetRuzana\CreaterApp\Rsteam\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\ilivic911\Desktop\Новая папка\SweetRuzana\CreaterApp\Rsteam\bin\Debug\EntityFramework.xml
+C:\Users\ilivic911\Desktop\Новая папка\SweetRuzana\CreaterApp\Rsteam\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\ilivic911\Desktop\Новая папка\SweetRuzana\CreaterApp\Rsteam\bin\Debug\ru\EntityFramework.resources.dll
+C:\Users\ilivic911\Desktop\Новая папка\SweetRuzana\CreaterApp\Rsteam\obj\Debug\CreaterApp.csproj.AssemblyReference.cache
+C:\Users\ilivic911\Desktop\Новая папка\SweetRuzana\CreaterApp\Rsteam\obj\Debug\CreaterApp.csproj.SuggestedBindingRedirects.cache
+C:\Users\ilivic911\Desktop\Новая папка\SweetRuzana\CreaterApp\Rsteam\obj\Debug\PagesApp\PageAddGame.g.cs
+C:\Users\ilivic911\Desktop\Новая папка\SweetRuzana\CreaterApp\Rsteam\obj\Debug\PagesApp\PageAuthrization.g.cs
+C:\Users\ilivic911\Desktop\Новая папка\SweetRuzana\CreaterApp\Rsteam\obj\Debug\PagesApp\PageDellGame.g.cs
+C:\Users\ilivic911\Desktop\Новая папка\SweetRuzana\CreaterApp\Rsteam\obj\Debug\PagesApp\PageEditAkk.g.cs
+C:\Users\ilivic911\Desktop\Новая папка\SweetRuzana\CreaterApp\Rsteam\obj\Debug\PagesApp\PageEditGame.g.cs
+C:\Users\ilivic911\Desktop\Новая папка\SweetRuzana\CreaterApp\Rsteam\obj\Debug\PagesApp\PageMenuMain.g.cs
+C:\Users\ilivic911\Desktop\Новая папка\SweetRuzana\CreaterApp\Rsteam\obj\Debug\PagesApp\PageRegistration.g.cs
+C:\Users\ilivic911\Desktop\Новая папка\SweetRuzana\CreaterApp\Rsteam\obj\Debug\PagesApp\PageShouBlocGames.g.cs
+C:\Users\ilivic911\Desktop\Новая папка\SweetRuzana\CreaterApp\Rsteam\obj\Debug\PagesApp\PageShowGameFoEdit.g.cs
+C:\Users\ilivic911\Desktop\Новая папка\SweetRuzana\CreaterApp\Rsteam\obj\Debug\WindowsApp\MainWindow.g.cs
+C:\Users\ilivic911\Desktop\Новая папка\SweetRuzana\CreaterApp\Rsteam\obj\Debug\App.g.cs
+C:\Users\ilivic911\Desktop\Новая папка\SweetRuzana\CreaterApp\Rsteam\obj\Debug\Rsteam_Content.g.cs
+C:\Users\ilivic911\Desktop\Новая папка\SweetRuzana\CreaterApp\Rsteam\obj\Debug\Rsteam_MarkupCompile.cache
+C:\Users\ilivic911\Desktop\Новая папка\SweetRuzana\CreaterApp\Rsteam\obj\Debug\Rsteam_MarkupCompile.lref
+C:\Users\ilivic911\Desktop\Новая папка\SweetRuzana\CreaterApp\Rsteam\obj\Debug\App.baml
+C:\Users\ilivic911\Desktop\Новая папка\SweetRuzana\CreaterApp\Rsteam\obj\Debug\PagesApp\PageAddGame.baml
+C:\Users\ilivic911\Desktop\Новая папка\SweetRuzana\CreaterApp\Rsteam\obj\Debug\PagesApp\PageAuthrization.baml
+C:\Users\ilivic911\Desktop\Новая папка\SweetRuzana\CreaterApp\Rsteam\obj\Debug\PagesApp\PageDellGame.baml
+C:\Users\ilivic911\Desktop\Новая папка\SweetRuzana\CreaterApp\Rsteam\obj\Debug\PagesApp\PageEditAkk.baml
+C:\Users\ilivic911\Desktop\Новая папка\SweetRuzana\CreaterApp\Rsteam\obj\Debug\PagesApp\PageEditGame.baml
+C:\Users\ilivic911\Desktop\Новая папка\SweetRuzana\CreaterApp\Rsteam\obj\Debug\PagesApp\PageMenuMain.baml
+C:\Users\ilivic911\Desktop\Новая папка\SweetRuzana\CreaterApp\Rsteam\obj\Debug\PagesApp\PageRegistration.baml
+C:\Users\ilivic911\Desktop\Новая папка\SweetRuzana\CreaterApp\Rsteam\obj\Debug\PagesApp\PageShouBlocGames.baml
+C:\Users\ilivic911\Desktop\Новая папка\SweetRuzana\CreaterApp\Rsteam\obj\Debug\PagesApp\PageShowGameFoEdit.baml
+C:\Users\ilivic911\Desktop\Новая папка\SweetRuzana\CreaterApp\Rsteam\obj\Debug\WindowsApp\MainWindow.baml
+C:\Users\ilivic911\Desktop\Новая папка\SweetRuzana\CreaterApp\Rsteam\obj\Debug\Rsteam.g.resources
+C:\Users\ilivic911\Desktop\Новая папка\SweetRuzana\CreaterApp\Rsteam\obj\Debug\Rsteam.Properties.Resources.resources
+C:\Users\ilivic911\Desktop\Новая папка\SweetRuzana\CreaterApp\Rsteam\obj\Debug\CreaterApp.csproj.GenerateResource.cache
+C:\Users\ilivic911\Desktop\Новая папка\SweetRuzana\CreaterApp\Rsteam\obj\Debug\CreaterApp.csproj.CoreCompileInputs.cache
+C:\Users\ilivic911\Desktop\Новая папка\SweetRuzana\CreaterApp\Rsteam\obj\Debug\CreaterApp.csproj.CopyComplete
+C:\Users\ilivic911\Desktop\Новая папка\SweetRuzana\CreaterApp\Rsteam\obj\Debug\Rsteam.exe
+C:\Users\ilivic911\Desktop\Новая папка\SweetRuzana\CreaterApp\Rsteam\obj\Debug\Rsteam.pdb

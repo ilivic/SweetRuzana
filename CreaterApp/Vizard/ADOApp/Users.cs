@@ -23,6 +23,7 @@ namespace Vizard.ADOApp
             this.GameComments = new HashSet<GameComments>();
             this.AnswerAppeal = new HashSet<AnswerAppeal>();
             this.Appeal = new HashSet<Appeal>();
+            this.Librarys = new HashSet<Librarys>();
         }
     
         public int id_user { get; set; }
@@ -48,5 +49,7 @@ namespace Vizard.ADOApp
         public virtual ICollection<AnswerAppeal> AnswerAppeal { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Appeal> Appeal { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Librarys> Librarys { get; set; }
     }
 }

@@ -1,4 +1,4 @@
-﻿// Создание кода T4 для модели "C:\Users\ilivic911\Desktop\VardBand\CreaterApp\Rsteam\ADOApp\Model1.edmx" включено. 
+﻿// Создание кода T4 для модели "C:\Users\ilivic911\Desktop\Новая папка\SweetRuzana\CreaterApp\Rsteam\ADOApp\Model1.edmx" включено. 
 // Чтобы включить формирование кода прежних версий, измените значение свойства "Стратегия создания кода" конструктора
 // на "Legacy ObjectContext". Это свойство доступно в окне "Свойства", если модель
 // открыта в конструкторе.

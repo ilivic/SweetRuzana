@@ -1,0 +1,26 @@
+﻿<Page x:Class="ClMan.PagesApp.PageSaleGame"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ClMan.PagesApp"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="PageSaleGame">
+
+    <Grid>
+        <StackPanel>
+            <Image Source="{Binding Photo}" Width="350" Height="350"/>
+            <TextBlock Text="{Binding Title}"/>
+            <TextBlock Text="{Binding Price}"/>
+            <ScrollViewer Height="200">
+                <TextBlock Text="{Binding Diskription}"/>
+            </ScrollViewer>
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Button Content="купить" Background="SkyBlue" Margin="10" Padding="10" Click="ClEventByGame"/>
+                <Button Content="избранное" Background="Pink" Margin="10" Padding="10" Click="ClEventFeivoritGame"/>
+                <Button Content="поделиться" Background="LightGreen" Margin="10" Padding="10" Click="ClLinkGame"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Page>

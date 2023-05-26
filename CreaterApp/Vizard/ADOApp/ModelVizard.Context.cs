@@ -30,12 +30,16 @@ namespace Vizard.ADOApp
         public virtual DbSet<Creaters> Creaters { get; set; }
         public virtual DbSet<Feivarit> Feivarit { get; set; }
         public virtual DbSet<GameComments> GameComments { get; set; }
-        public virtual DbSet<Games> Games { get; set; }
         public virtual DbSet<Librarys> Librarys { get; set; }
         public virtual DbSet<LibrarysGames> LibrarysGames { get; set; }
         public virtual DbSet<Prodactions> Prodactions { get; set; }
         public virtual DbSet<Reiteg> Reiteg { get; set; }
         public virtual DbSet<Roles> Roles { get; set; }
         public virtual DbSet<Users> Users { get; set; }
+        public virtual DbSet<AnswerAppeal> AnswerAppeal { get; set; }
+        public virtual DbSet<Appeal> Appeal { get; set; }
+        public virtual DbSet<AppealCloseType> AppealCloseType { get; set; }
+        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
+        public virtual DbSet<Games> Games { get; set; }
     }
 }

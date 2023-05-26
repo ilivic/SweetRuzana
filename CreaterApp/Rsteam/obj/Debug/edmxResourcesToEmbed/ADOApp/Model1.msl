@@ -48,14 +48,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Librarys">
-      <EntityTypeMapping TypeName="RsteamModel.Librarys">
-        <MappingFragment StoreEntitySet="Librarys">
-          <ScalarProperty Name="id_library" ColumnName="id_library" />
-          <ScalarProperty Name="User_id" ColumnName="User_id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="LibrarysGames">
       <EntityTypeMapping TypeName="RsteamModel.LibrarysGames">
         <MappingFragment StoreEntitySet="LibrarysGames">
@@ -107,6 +99,7 @@
     <EntitySetMapping Name="Games">
       <EntityTypeMapping TypeName="RsteamModel.Games">
         <MappingFragment StoreEntitySet="Games">
+          <ScalarProperty Name="Diskription" ColumnName="Diskription" />
           <ScalarProperty Name="PathFoGame" ColumnName="PathFoGame" />
           <ScalarProperty Name="IsBlocet" ColumnName="IsBlocet" />
           <ScalarProperty Name="Reiting_id" ColumnName="Reiting_id" />

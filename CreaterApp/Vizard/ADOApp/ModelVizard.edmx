@@ -4,7 +4,37 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Хранилище RsteamModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="Хранилище RsteamModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AnswerAppeal">
+          <Key>
+            <PropertyRef Name="id_Answer" />
+          </Key>
+          <Property Name="id_Answer" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Text" Type="text" Nullable="false" />
+          <Property Name="User_id" Type="int" Nullable="false" />
+          <Property Name="Appeal_id" Type="int" Nullable="false" />
+          <Property Name="DateAnswer" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Appeal">
+          <Key>
+            <PropertyRef Name="id_Appeal" />
+          </Key>
+          <Property Name="id_Appeal" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Text" Type="text" Nullable="false" />
+          <Property Name="User_id" Type="int" Nullable="false" />
+          <Property Name="DateAppeal" Type="datetime" Nullable="false" />
+          <Property Name="IsVisibli" Type="bit" Nullable="false" />
+          <Property Name="MediaElement" Type="text" />
+          <Property Name="isClose" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AppealCloseType">
+          <Key>
+            <PropertyRef Name="id_ACT" />
+          </Key>
+          <Property Name="id_ACT" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Color" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
         <EntityType Name="Balances">
           <Key>
             <PropertyRef Name="id_balance" />
@@ -60,6 +90,7 @@
           <Property Name="Reiting_id" Type="int" Nullable="false" />
           <Property Name="IsBlocet" Type="int" />
           <Property Name="PathFoGame" Type="text" Nullable="false" />
+          <Property Name="Diskription" Type="text" />
         </EntityType>
         <EntityType Name="Librarys">
           <Key>
@@ -67,6 +98,7 @@
           </Key>
           <Property Name="id_library" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="User_id" Type="int" Nullable="false" />
+          <Property Name="DataCreate" Type="datetime" Nullable="false" />
         </EntityType>
         <EntityType Name="LibrarysGames">
           <Key>
@@ -98,6 +130,16 @@
           <Property Name="id_role" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Titlel" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
         <EntityType Name="Users">
           <Key>
             <PropertyRef Name="id_user" />
@@ -111,6 +153,54 @@
           <Property Name="Role_id" Type="int" Nullable="false" />
           <Property Name="IsBlocet" Type="int" Nullable="false" />
         </EntityType>
+        <Association Name="FK_AnswerAppeal_Appeal">
+          <End Role="Appeal" Type="Self.Appeal" Multiplicity="1" />
+          <End Role="AnswerAppeal" Type="Self.AnswerAppeal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Appeal">
+              <PropertyRef Name="id_Appeal" />
+            </Principal>
+            <Dependent Role="AnswerAppeal">
+              <PropertyRef Name="Appeal_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AnswerAppeal_Users">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="AnswerAppeal" Type="Self.AnswerAppeal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="id_user" />
+            </Principal>
+            <Dependent Role="AnswerAppeal">
+              <PropertyRef Name="User_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Appeal_AppealCloseType">
+          <End Role="AppealCloseType" Type="Self.AppealCloseType" Multiplicity="1" />
+          <End Role="Appeal" Type="Self.Appeal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AppealCloseType">
+              <PropertyRef Name="id_ACT" />
+            </Principal>
+            <Dependent Role="Appeal">
+              <PropertyRef Name="isClose" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Appeal_Users">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="Appeal" Type="Self.Appeal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="id_user" />
+            </Principal>
+            <Dependent Role="Appeal">
+              <PropertyRef Name="User_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Balances_Users">
           <End Role="Users" Type="Self.Users" Multiplicity="1" />
           <End Role="Balances" Type="Self.Balances" Multiplicity="*" />
@@ -240,6 +330,18 @@
             </Principal>
             <Dependent Role="Games">
               <PropertyRef Name="Reiting_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Librarys_Users">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="Librarys" Type="Self.Librarys" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="id_user" />
+            </Principal>
+            <Dependent Role="Librarys">
+              <PropertyRef Name="User_id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -292,6 +394,9 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="Хранилище RsteamModelContainer">
+          <EntitySet Name="AnswerAppeal" EntityType="Self.AnswerAppeal" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Appeal" EntityType="Self.Appeal" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AppealCloseType" EntityType="Self.AppealCloseType" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Balances" EntityType="Self.Balances" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Blocet" EntityType="Self.Blocet" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Creaters" EntityType="Self.Creaters" Schema="dbo" store:Type="Tables" />
@@ -303,7 +408,24 @@
           <EntitySet Name="Prodactions" EntityType="Self.Prodactions" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Reiteg" EntityType="Self.Reiteg" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Roles" EntityType="Self.Roles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_AnswerAppeal_Appeal" Association="Self.FK_AnswerAppeal_Appeal">
+            <End Role="Appeal" EntitySet="Appeal" />
+            <End Role="AnswerAppeal" EntitySet="AnswerAppeal" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AnswerAppeal_Users" Association="Self.FK_AnswerAppeal_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="AnswerAppeal" EntitySet="AnswerAppeal" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Appeal_AppealCloseType" Association="Self.FK_Appeal_AppealCloseType">
+            <End Role="AppealCloseType" EntitySet="AppealCloseType" />
+            <End Role="Appeal" EntitySet="Appeal" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Appeal_Users" Association="Self.FK_Appeal_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Appeal" EntitySet="Appeal" />
+          </AssociationSet>
           <AssociationSet Name="FK_Balances_Users" Association="Self.FK_Balances_Users">
             <End Role="Users" EntitySet="Users" />
             <End Role="Balances" EntitySet="Balances" />
@@ -348,6 +470,10 @@
             <End Role="Reiteg" EntitySet="Reiteg" />
             <End Role="Games" EntitySet="Games" />
           </AssociationSet>
+          <AssociationSet Name="FK_Librarys_Users" Association="Self.FK_Librarys_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Librarys" EntitySet="Librarys" />
+          </AssociationSet>
           <AssociationSet Name="FK_LibrarysGames_Games" Association="Self.FK_LibrarysGames_Games">
             <End Role="Games" EntitySet="Games" />
             <End Role="LibrarysGames" EntitySet="LibrarysGames" />
@@ -365,8 +491,7 @@
             <End Role="Users" EntitySet="Users" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="RsteamModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -386,8 +511,8 @@
           <Property Name="Id_blocet" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="GameComments" Relationship="Self.FK_GameComments_Blocet" FromRole="Blocet" ToRole="GameComments" />
-          <NavigationProperty Name="Games" Relationship="Self.FK_Games_Blocet" FromRole="Blocet" ToRole="Games" />
           <NavigationProperty Name="Users" Relationship="Self.FK_Users_Blocet" FromRole="Blocet" ToRole="Users" />
+          <NavigationProperty Name="Games" Relationship="RsteamModel.FK_Games_Blocet" FromRole="Blocet" ToRole="Games" />
         </EntityType>
         <EntityType Name="Creaters">
           <Key>
@@ -407,8 +532,8 @@
           <Property Name="id_feit" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="User_id" Type="Int32" Nullable="false" />
           <Property Name="Game_id" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Games" Relationship="Self.FK_Feivarit_Games" FromRole="Feivarit" ToRole="Games" />
           <NavigationProperty Name="Users" Relationship="Self.FK_Feivarit_Users" FromRole="Feivarit" ToRole="Users" />
+          <NavigationProperty Name="Games" Relationship="RsteamModel.FK_Feivarit_Games" FromRole="Feivarit" ToRole="Games" />
         </EntityType>
         <EntityType Name="GameComments">
           <Key>
@@ -420,28 +545,8 @@
           <Property Name="Game_id" Type="Int32" Nullable="false" />
           <Property Name="IsBlocet" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Blocet" Relationship="Self.FK_GameComments_Blocet" FromRole="GameComments" ToRole="Blocet" />
-          <NavigationProperty Name="Games" Relationship="Self.FK_GameComments_Games" FromRole="GameComments" ToRole="Games" />
           <NavigationProperty Name="Users" Relationship="Self.FK_GameComments_Users" FromRole="GameComments" ToRole="Users" />
-        </EntityType>
-        <EntityType Name="Games">
-          <Key>
-            <PropertyRef Name="id_game" />
-          </Key>
-          <Property Name="id_game" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Photo" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
-          <Property Name="prodaction_id" Type="Int32" Nullable="false" />
-          <Property Name="DataCreate" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="Price" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
-          <Property Name="Reiting_id" Type="Int32" Nullable="false" />
-          <Property Name="IsBlocet" Type="Int32" />
-          <Property Name="PathFoGame" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="Blocet" Relationship="Self.FK_Games_Blocet" FromRole="Games" ToRole="Blocet" />
-          <NavigationProperty Name="Feivarit" Relationship="Self.FK_Feivarit_Games" FromRole="Games" ToRole="Feivarit" />
-          <NavigationProperty Name="GameComments" Relationship="Self.FK_GameComments_Games" FromRole="Games" ToRole="GameComments" />
-          <NavigationProperty Name="Prodactions" Relationship="Self.FK_Games_Prodactions" FromRole="Games" ToRole="Prodactions" />
-          <NavigationProperty Name="Reiteg" Relationship="Self.FK_Games_Reiteg" FromRole="Games" ToRole="Reiteg" />
-          <NavigationProperty Name="LibrarysGames" Relationship="Self.FK_LibrarysGames_Games" FromRole="Games" ToRole="LibrarysGames" />
+          <NavigationProperty Name="Games" Relationship="RsteamModel.FK_GameComments_Games" FromRole="GameComments" ToRole="Games" />
         </EntityType>
         <EntityType Name="Librarys">
           <Key>
@@ -450,6 +555,8 @@
           <Property Name="id_library" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="User_id" Type="Int32" Nullable="false" />
           <NavigationProperty Name="LibrarysGames" Relationship="Self.FK_LibrarysGames_Librarys" FromRole="Librarys" ToRole="LibrarysGames" />
+          <Property Name="DataCreate" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Users" Relationship="RsteamModel.FK_Librarys_Users" FromRole="Librarys" ToRole="Users" />
         </EntityType>
         <EntityType Name="LibrarysGames">
           <Key>
@@ -459,8 +566,8 @@
           <Property Name="Game_id" Type="Int32" Nullable="false" />
           <Property Name="Library_id" Type="Int32" Nullable="false" />
           <Property Name="LastStartDate" Type="DateTime" Precision="3" />
-          <NavigationProperty Name="Games" Relationship="Self.FK_LibrarysGames_Games" FromRole="LibrarysGames" ToRole="Games" />
           <NavigationProperty Name="Librarys" Relationship="Self.FK_LibrarysGames_Librarys" FromRole="LibrarysGames" ToRole="Librarys" />
+          <NavigationProperty Name="Games" Relationship="RsteamModel.FK_LibrarysGames_Games" FromRole="LibrarysGames" ToRole="Games" />
         </EntityType>
         <EntityType Name="Prodactions">
           <Key>
@@ -469,7 +576,7 @@
           <Property Name="id_prodaction" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="Creaters" Relationship="Self.FK_Creaters_Prodactions" FromRole="Prodactions" ToRole="Creaters" />
-          <NavigationProperty Name="Games" Relationship="Self.FK_Games_Prodactions" FromRole="Prodactions" ToRole="Games" />
+          <NavigationProperty Name="Games" Relationship="RsteamModel.FK_Games_Prodactions" FromRole="Prodactions" ToRole="Games" />
         </EntityType>
         <EntityType Name="Reiteg">
           <Key>
@@ -477,7 +584,7 @@
           </Key>
           <Property Name="id_reiting" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="Games" Relationship="Self.FK_Games_Reiteg" FromRole="Reiteg" ToRole="Games" />
+          <NavigationProperty Name="Games" Relationship="RsteamModel.FK_Games_Reiteg" FromRole="Reiteg" ToRole="Games" />
         </EntityType>
         <EntityType Name="Roles">
           <Key>
@@ -505,6 +612,9 @@
           <NavigationProperty Name="Feivarit" Relationship="Self.FK_Feivarit_Users" FromRole="Users" ToRole="Feivarit" />
           <NavigationProperty Name="GameComments" Relationship="Self.FK_GameComments_Users" FromRole="Users" ToRole="GameComments" />
           <NavigationProperty Name="Roles" Relationship="Self.FK_Users_Roles" FromRole="Users" ToRole="Roles" />
+          <NavigationProperty Name="AnswerAppeal" Relationship="RsteamModel.FK_AnswerAppeal_Users" FromRole="Users" ToRole="AnswerAppeal" />
+          <NavigationProperty Name="Appeal" Relationship="RsteamModel.FK_Appeal_Users" FromRole="Users" ToRole="Appeal" />
+          <NavigationProperty Name="Librarys" Relationship="RsteamModel.FK_Librarys_Users" FromRole="Users" ToRole="Librarys" />
         </EntityType>
         <Association Name="FK_Balances_Users">
           <End Role="Users" Type="Self.Users" Multiplicity="1" />
@@ -526,18 +636,6 @@
               <PropertyRef Name="Id_blocet" />
             </Principal>
             <Dependent Role="GameComments">
-              <PropertyRef Name="IsBlocet" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Games_Blocet">
-          <End Role="Blocet" Type="Self.Blocet" Multiplicity="0..1" />
-          <End Role="Games" Type="Self.Games" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Blocet">
-              <PropertyRef Name="Id_blocet" />
-            </Principal>
-            <Dependent Role="Games">
               <PropertyRef Name="IsBlocet" />
             </Dependent>
           </ReferentialConstraint>
@@ -578,18 +676,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Feivarit_Games">
-          <End Role="Games" Type="Self.Games" Multiplicity="1" />
-          <End Role="Feivarit" Type="Self.Feivarit" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Games">
-              <PropertyRef Name="id_game" />
-            </Principal>
-            <Dependent Role="Feivarit">
-              <PropertyRef Name="Game_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Feivarit_Users">
           <End Role="Users" Type="Self.Users" Multiplicity="1" />
           <End Role="Feivarit" Type="Self.Feivarit" Multiplicity="*" />
@@ -602,18 +688,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_GameComments_Games">
-          <End Role="Games" Type="Self.Games" Multiplicity="1" />
-          <End Role="GameComments" Type="Self.GameComments" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Games">
-              <PropertyRef Name="id_game" />
-            </Principal>
-            <Dependent Role="GameComments">
-              <PropertyRef Name="Game_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_GameComments_Users">
           <End Role="Users" Type="Self.Users" Multiplicity="1" />
           <End Role="GameComments" Type="Self.GameComments" Multiplicity="*" />
@@ -623,42 +697,6 @@
             </Principal>
             <Dependent Role="GameComments">
               <PropertyRef Name="User_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Games_Prodactions">
-          <End Role="Prodactions" Type="Self.Prodactions" Multiplicity="1" />
-          <End Role="Games" Type="Self.Games" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Prodactions">
-              <PropertyRef Name="id_prodaction" />
-            </Principal>
-            <Dependent Role="Games">
-              <PropertyRef Name="prodaction_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Games_Reiteg">
-          <End Role="Reiteg" Type="Self.Reiteg" Multiplicity="1" />
-          <End Role="Games" Type="Self.Games" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Reiteg">
-              <PropertyRef Name="id_reiting" />
-            </Principal>
-            <Dependent Role="Games">
-              <PropertyRef Name="Reiting_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_LibrarysGames_Games">
-          <End Role="Games" Type="Self.Games" Multiplicity="1" />
-          <End Role="LibrarysGames" Type="Self.LibrarysGames" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Games">
-              <PropertyRef Name="id_game" />
-            </Principal>
-            <Dependent Role="LibrarysGames">
-              <PropertyRef Name="Game_id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -692,7 +730,6 @@
           <EntitySet Name="Creaters" EntityType="Self.Creaters" />
           <EntitySet Name="Feivarit" EntityType="Self.Feivarit" />
           <EntitySet Name="GameComments" EntityType="Self.GameComments" />
-          <EntitySet Name="Games" EntityType="Self.Games" />
           <EntitySet Name="Librarys" EntityType="Self.Librarys" />
           <EntitySet Name="LibrarysGames" EntityType="Self.LibrarysGames" />
           <EntitySet Name="Prodactions" EntityType="Self.Prodactions" />
@@ -707,10 +744,6 @@
             <End Role="Blocet" EntitySet="Blocet" />
             <End Role="GameComments" EntitySet="GameComments" />
           </AssociationSet>
-          <AssociationSet Name="FK_Games_Blocet" Association="Self.FK_Games_Blocet">
-            <End Role="Blocet" EntitySet="Blocet" />
-            <End Role="Games" EntitySet="Games" />
-          </AssociationSet>
           <AssociationSet Name="FK_Users_Blocet" Association="Self.FK_Users_Blocet">
             <End Role="Blocet" EntitySet="Blocet" />
             <End Role="Users" EntitySet="Users" />
@@ -723,33 +756,13 @@
             <End Role="Users" EntitySet="Users" />
             <End Role="Creaters" EntitySet="Creaters" />
           </AssociationSet>
-          <AssociationSet Name="FK_Feivarit_Games" Association="Self.FK_Feivarit_Games">
-            <End Role="Games" EntitySet="Games" />
-            <End Role="Feivarit" EntitySet="Feivarit" />
-          </AssociationSet>
           <AssociationSet Name="FK_Feivarit_Users" Association="Self.FK_Feivarit_Users">
             <End Role="Users" EntitySet="Users" />
             <End Role="Feivarit" EntitySet="Feivarit" />
           </AssociationSet>
-          <AssociationSet Name="FK_GameComments_Games" Association="Self.FK_GameComments_Games">
-            <End Role="Games" EntitySet="Games" />
-            <End Role="GameComments" EntitySet="GameComments" />
-          </AssociationSet>
           <AssociationSet Name="FK_GameComments_Users" Association="Self.FK_GameComments_Users">
             <End Role="Users" EntitySet="Users" />
             <End Role="GameComments" EntitySet="GameComments" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Games_Prodactions" Association="Self.FK_Games_Prodactions">
-            <End Role="Prodactions" EntitySet="Prodactions" />
-            <End Role="Games" EntitySet="Games" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Games_Reiteg" Association="Self.FK_Games_Reiteg">
-            <End Role="Reiteg" EntitySet="Reiteg" />
-            <End Role="Games" EntitySet="Games" />
-          </AssociationSet>
-          <AssociationSet Name="FK_LibrarysGames_Games" Association="Self.FK_LibrarysGames_Games">
-            <End Role="Games" EntitySet="Games" />
-            <End Role="LibrarysGames" EntitySet="LibrarysGames" />
           </AssociationSet>
           <AssociationSet Name="FK_LibrarysGames_Librarys" Association="Self.FK_LibrarysGames_Librarys">
             <End Role="Librarys" EntitySet="Librarys" />
@@ -759,7 +772,255 @@
             <End Role="Roles" EntitySet="Roles" />
             <End Role="Users" EntitySet="Users" />
           </AssociationSet>
+          <EntitySet Name="AnswerAppeal" EntityType="RsteamModel.AnswerAppeal" />
+          <EntitySet Name="Appeal" EntityType="RsteamModel.Appeal" />
+          <EntitySet Name="AppealCloseType" EntityType="RsteamModel.AppealCloseType" />
+          <EntitySet Name="sysdiagrams" EntityType="RsteamModel.sysdiagrams" />
+          <AssociationSet Name="FK_AnswerAppeal_Appeal" Association="RsteamModel.FK_AnswerAppeal_Appeal">
+            <End Role="Appeal" EntitySet="Appeal" />
+            <End Role="AnswerAppeal" EntitySet="AnswerAppeal" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AnswerAppeal_Users" Association="RsteamModel.FK_AnswerAppeal_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="AnswerAppeal" EntitySet="AnswerAppeal" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Appeal_AppealCloseType" Association="RsteamModel.FK_Appeal_AppealCloseType">
+            <End Role="AppealCloseType" EntitySet="AppealCloseType" />
+            <End Role="Appeal" EntitySet="Appeal" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Appeal_Users" Association="RsteamModel.FK_Appeal_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Appeal" EntitySet="Appeal" />
+          </AssociationSet>
+          <EntitySet Name="Games" EntityType="RsteamModel.Games" />
+          <AssociationSet Name="FK_Games_Blocet" Association="RsteamModel.FK_Games_Blocet">
+            <End Role="Blocet" EntitySet="Blocet" />
+            <End Role="Games" EntitySet="Games" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Feivarit_Games" Association="RsteamModel.FK_Feivarit_Games">
+            <End Role="Games" EntitySet="Games" />
+            <End Role="Feivarit" EntitySet="Feivarit" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GameComments_Games" Association="RsteamModel.FK_GameComments_Games">
+            <End Role="Games" EntitySet="Games" />
+            <End Role="GameComments" EntitySet="GameComments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Games_Prodactions" Association="RsteamModel.FK_Games_Prodactions">
+            <End Role="Prodactions" EntitySet="Prodactions" />
+            <End Role="Games" EntitySet="Games" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Games_Reiteg" Association="RsteamModel.FK_Games_Reiteg">
+            <End Role="Reiteg" EntitySet="Reiteg" />
+            <End Role="Games" EntitySet="Games" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LibrarysGames_Games" Association="RsteamModel.FK_LibrarysGames_Games">
+            <End Role="Games" EntitySet="Games" />
+            <End Role="LibrarysGames" EntitySet="LibrarysGames" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Librarys_Users" Association="RsteamModel.FK_Librarys_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Librarys" EntitySet="Librarys" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="AnswerAppeal">
+          <Key>
+            <PropertyRef Name="id_Answer" />
+          </Key>
+          <Property Name="id_Answer" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Text" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="User_id" Type="Int32" Nullable="false" />
+          <Property Name="Appeal_id" Type="Int32" Nullable="false" />
+          <Property Name="DateAnswer" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Appeal" Relationship="RsteamModel.FK_AnswerAppeal_Appeal" FromRole="AnswerAppeal" ToRole="Appeal" />
+          <NavigationProperty Name="Users" Relationship="RsteamModel.FK_AnswerAppeal_Users" FromRole="AnswerAppeal" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="Appeal">
+          <Key>
+            <PropertyRef Name="id_Appeal" />
+          </Key>
+          <Property Name="id_Appeal" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Text" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="User_id" Type="Int32" Nullable="false" />
+          <Property Name="DateAppeal" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="IsVisibli" Type="Boolean" Nullable="false" />
+          <Property Name="MediaElement" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="isClose" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="AnswerAppeal" Relationship="RsteamModel.FK_AnswerAppeal_Appeal" FromRole="Appeal" ToRole="AnswerAppeal" />
+          <NavigationProperty Name="AppealCloseType" Relationship="RsteamModel.FK_Appeal_AppealCloseType" FromRole="Appeal" ToRole="AppealCloseType" />
+          <NavigationProperty Name="Users" Relationship="RsteamModel.FK_Appeal_Users" FromRole="Appeal" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="AppealCloseType">
+          <Key>
+            <PropertyRef Name="id_ACT" />
+          </Key>
+          <Property Name="id_ACT" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Color" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Appeal" Relationship="RsteamModel.FK_Appeal_AppealCloseType" FromRole="AppealCloseType" ToRole="Appeal" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <Association Name="FK_AnswerAppeal_Appeal">
+          <End Type="RsteamModel.Appeal" Role="Appeal" Multiplicity="1" />
+          <End Type="RsteamModel.AnswerAppeal" Role="AnswerAppeal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Appeal">
+              <PropertyRef Name="id_Appeal" />
+            </Principal>
+            <Dependent Role="AnswerAppeal">
+              <PropertyRef Name="Appeal_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AnswerAppeal_Users">
+          <End Type="RsteamModel.Users" Role="Users" Multiplicity="1" />
+          <End Type="RsteamModel.AnswerAppeal" Role="AnswerAppeal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="id_user" />
+            </Principal>
+            <Dependent Role="AnswerAppeal">
+              <PropertyRef Name="User_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Appeal_AppealCloseType">
+          <End Type="RsteamModel.AppealCloseType" Role="AppealCloseType" Multiplicity="1" />
+          <End Type="RsteamModel.Appeal" Role="Appeal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AppealCloseType">
+              <PropertyRef Name="id_ACT" />
+            </Principal>
+            <Dependent Role="Appeal">
+              <PropertyRef Name="isClose" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Appeal_Users">
+          <End Type="RsteamModel.Users" Role="Users" Multiplicity="1" />
+          <End Type="RsteamModel.Appeal" Role="Appeal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="id_user" />
+            </Principal>
+            <Dependent Role="Appeal">
+              <PropertyRef Name="User_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Games">
+          <Key>
+            <PropertyRef Name="id_game" />
+          </Key>
+          <Property Name="id_game" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Photo" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+          <Property Name="prodaction_id" Type="Int32" Nullable="false" />
+          <Property Name="DataCreate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Price" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="Reiting_id" Type="Int32" Nullable="false" />
+          <Property Name="IsBlocet" Type="Int32" />
+          <Property Name="PathFoGame" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Diskription" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Blocet" Relationship="RsteamModel.FK_Games_Blocet" FromRole="Games" ToRole="Blocet" />
+          <NavigationProperty Name="Feivarit" Relationship="RsteamModel.FK_Feivarit_Games" FromRole="Games" ToRole="Feivarit" />
+          <NavigationProperty Name="GameComments" Relationship="RsteamModel.FK_GameComments_Games" FromRole="Games" ToRole="GameComments" />
+          <NavigationProperty Name="Prodactions" Relationship="RsteamModel.FK_Games_Prodactions" FromRole="Games" ToRole="Prodactions" />
+          <NavigationProperty Name="Reiteg" Relationship="RsteamModel.FK_Games_Reiteg" FromRole="Games" ToRole="Reiteg" />
+          <NavigationProperty Name="LibrarysGames" Relationship="RsteamModel.FK_LibrarysGames_Games" FromRole="Games" ToRole="LibrarysGames" />
+        </EntityType>
+        <Association Name="FK_Games_Blocet">
+          <End Type="RsteamModel.Blocet" Role="Blocet" Multiplicity="0..1" />
+          <End Type="RsteamModel.Games" Role="Games" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Blocet">
+              <PropertyRef Name="Id_blocet" />
+            </Principal>
+            <Dependent Role="Games">
+              <PropertyRef Name="IsBlocet" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Feivarit_Games">
+          <End Type="RsteamModel.Games" Role="Games" Multiplicity="1" />
+          <End Type="RsteamModel.Feivarit" Role="Feivarit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Games">
+              <PropertyRef Name="id_game" />
+            </Principal>
+            <Dependent Role="Feivarit">
+              <PropertyRef Name="Game_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GameComments_Games">
+          <End Type="RsteamModel.Games" Role="Games" Multiplicity="1" />
+          <End Type="RsteamModel.GameComments" Role="GameComments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Games">
+              <PropertyRef Name="id_game" />
+            </Principal>
+            <Dependent Role="GameComments">
+              <PropertyRef Name="Game_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Games_Prodactions">
+          <End Type="RsteamModel.Prodactions" Role="Prodactions" Multiplicity="1" />
+          <End Type="RsteamModel.Games" Role="Games" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Prodactions">
+              <PropertyRef Name="id_prodaction" />
+            </Principal>
+            <Dependent Role="Games">
+              <PropertyRef Name="prodaction_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Games_Reiteg">
+          <End Type="RsteamModel.Reiteg" Role="Reiteg" Multiplicity="1" />
+          <End Type="RsteamModel.Games" Role="Games" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Reiteg">
+              <PropertyRef Name="id_reiting" />
+            </Principal>
+            <Dependent Role="Games">
+              <PropertyRef Name="Reiting_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LibrarysGames_Games">
+          <End Type="RsteamModel.Games" Role="Games" Multiplicity="1" />
+          <End Type="RsteamModel.LibrarysGames" Role="LibrarysGames" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Games">
+              <PropertyRef Name="id_game" />
+            </Principal>
+            <Dependent Role="LibrarysGames">
+              <PropertyRef Name="Game_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Librarys_Users">
+          <End Type="RsteamModel.Users" Role="Users" Multiplicity="1" />
+          <End Type="RsteamModel.Librarys" Role="Librarys" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="id_user" />
+            </Principal>
+            <Dependent Role="Librarys">
+              <PropertyRef Name="User_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -813,24 +1074,10 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Games">
-            <EntityTypeMapping TypeName="RsteamModel.Games">
-              <MappingFragment StoreEntitySet="Games">
-                <ScalarProperty Name="id_game" ColumnName="id_game" />
-                <ScalarProperty Name="Title" ColumnName="Title" />
-                <ScalarProperty Name="Photo" ColumnName="Photo" />
-                <ScalarProperty Name="prodaction_id" ColumnName="prodaction_id" />
-                <ScalarProperty Name="DataCreate" ColumnName="DataCreate" />
-                <ScalarProperty Name="Price" ColumnName="Price" />
-                <ScalarProperty Name="Reiting_id" ColumnName="Reiting_id" />
-                <ScalarProperty Name="IsBlocet" ColumnName="IsBlocet" />
-                <ScalarProperty Name="PathFoGame" ColumnName="PathFoGame" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Librarys">
             <EntityTypeMapping TypeName="RsteamModel.Librarys">
               <MappingFragment StoreEntitySet="Librarys">
+                <ScalarProperty Name="DataCreate" ColumnName="DataCreate" />
                 <ScalarProperty Name="id_library" ColumnName="id_library" />
                 <ScalarProperty Name="User_id" ColumnName="User_id" />
               </MappingFragment>
@@ -881,6 +1128,66 @@
                 <ScalarProperty Name="Photo" ColumnName="Photo" />
                 <ScalarProperty Name="Role_id" ColumnName="Role_id" />
                 <ScalarProperty Name="IsBlocet" ColumnName="IsBlocet" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AnswerAppeal">
+            <EntityTypeMapping TypeName="RsteamModel.AnswerAppeal">
+              <MappingFragment StoreEntitySet="AnswerAppeal">
+                <ScalarProperty Name="DateAnswer" ColumnName="DateAnswer" />
+                <ScalarProperty Name="Appeal_id" ColumnName="Appeal_id" />
+                <ScalarProperty Name="User_id" ColumnName="User_id" />
+                <ScalarProperty Name="Text" ColumnName="Text" />
+                <ScalarProperty Name="id_Answer" ColumnName="id_Answer" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Appeal">
+            <EntityTypeMapping TypeName="RsteamModel.Appeal">
+              <MappingFragment StoreEntitySet="Appeal">
+                <ScalarProperty Name="isClose" ColumnName="isClose" />
+                <ScalarProperty Name="MediaElement" ColumnName="MediaElement" />
+                <ScalarProperty Name="IsVisibli" ColumnName="IsVisibli" />
+                <ScalarProperty Name="DateAppeal" ColumnName="DateAppeal" />
+                <ScalarProperty Name="User_id" ColumnName="User_id" />
+                <ScalarProperty Name="Text" ColumnName="Text" />
+                <ScalarProperty Name="id_Appeal" ColumnName="id_Appeal" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AppealCloseType">
+            <EntityTypeMapping TypeName="RsteamModel.AppealCloseType">
+              <MappingFragment StoreEntitySet="AppealCloseType">
+                <ScalarProperty Name="Color" ColumnName="Color" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="id_ACT" ColumnName="id_ACT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="RsteamModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="definition" ColumnName="definition" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Games">
+            <EntityTypeMapping TypeName="RsteamModel.Games">
+              <MappingFragment StoreEntitySet="Games">
+                <ScalarProperty Name="Diskription" ColumnName="Diskription" />
+                <ScalarProperty Name="PathFoGame" ColumnName="PathFoGame" />
+                <ScalarProperty Name="IsBlocet" ColumnName="IsBlocet" />
+                <ScalarProperty Name="Reiting_id" ColumnName="Reiting_id" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="DataCreate" ColumnName="DataCreate" />
+                <ScalarProperty Name="prodaction_id" ColumnName="prodaction_id" />
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="id_game" ColumnName="id_game" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

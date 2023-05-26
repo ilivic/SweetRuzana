@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreaterApp", "Rsteam\Create
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vizard", "Vizard\Vizard.csproj", "{C1A6AB24-66F2-4882-AFE9-8429449CB479}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClMan", "ClMan\ClMan.csproj", "{6F44E341-9EE8-4C3D-BD2E-36D7369539C4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{C1A6AB24-66F2-4882-AFE9-8429449CB479}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C1A6AB24-66F2-4882-AFE9-8429449CB479}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C1A6AB24-66F2-4882-AFE9-8429449CB479}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F44E341-9EE8-4C3D-BD2E-36D7369539C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F44E341-9EE8-4C3D-BD2E-36D7369539C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F44E341-9EE8-4C3D-BD2E-36D7369539C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F44E341-9EE8-4C3D-BD2E-36D7369539C4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

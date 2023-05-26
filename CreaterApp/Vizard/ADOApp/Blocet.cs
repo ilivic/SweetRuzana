@@ -18,8 +18,8 @@ namespace Vizard.ADOApp
         public Blocet()
         {
             this.GameComments = new HashSet<GameComments>();
-            this.Games = new HashSet<Games>();
             this.Users = new HashSet<Users>();
+            this.Games = new HashSet<Games>();
         }
     
         public int Id_blocet { get; set; }
@@ -28,8 +28,8 @@ namespace Vizard.ADOApp
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<GameComments> GameComments { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Games> Games { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Users> Users { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Games> Games { get; set; }
     }
 }

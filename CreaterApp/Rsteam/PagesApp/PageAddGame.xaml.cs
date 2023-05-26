@@ -44,6 +44,7 @@ namespace Rsteam.PagesApp
                     DataCreate = DateTime.Now,
                     Price = (int.Parse(TxtPrice.Text)),
                     IsBlocet = 1,
+                    Diskription = TxtDis.Text,
                     Reiting_id = reitinSel.id_reiting,
                     PathFoGame = TxtPath.Text
                 };

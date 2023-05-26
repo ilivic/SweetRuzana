@@ -30,7 +30,6 @@ namespace Rsteam.ADOApp
         public virtual DbSet<Creaters> Creaters { get; set; }
         public virtual DbSet<Feivarit> Feivarit { get; set; }
         public virtual DbSet<GameComments> GameComments { get; set; }
-        public virtual DbSet<Librarys> Librarys { get; set; }
         public virtual DbSet<LibrarysGames> LibrarysGames { get; set; }
         public virtual DbSet<Prodactions> Prodactions { get; set; }
         public virtual DbSet<Reiteg> Reiteg { get; set; }

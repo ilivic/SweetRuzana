@@ -18,7 +18,7 @@ namespace Vizard.ADOApp
         public int User_id { get; set; }
         public int Game_id { get; set; }
     
-        public virtual Games Games { get; set; }
         public virtual Users Users { get; set; }
+        public virtual Games Games { get; set; }
     }
 }

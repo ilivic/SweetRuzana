@@ -60,13 +60,7 @@
           <Property Name="Reiting_id" Type="int" Nullable="false" />
           <Property Name="IsBlocet" Type="int" />
           <Property Name="PathFoGame" Type="text" Nullable="false" />
-        </EntityType>
-        <EntityType Name="Librarys">
-          <Key>
-            <PropertyRef Name="id_library" />
-          </Key>
-          <Property Name="id_library" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="User_id" Type="int" Nullable="false" />
+          <Property Name="Diskription" Type="text" />
         </EntityType>
         <EntityType Name="LibrarysGames">
           <Key>
@@ -255,18 +249,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_LibrarysGames_Librarys">
-          <End Role="Librarys" Type="Self.Librarys" Multiplicity="1" />
-          <End Role="LibrarysGames" Type="Self.LibrarysGames" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Librarys">
-              <PropertyRef Name="id_library" />
-            </Principal>
-            <Dependent Role="LibrarysGames">
-              <PropertyRef Name="Library_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Users_Blocet">
           <End Role="Blocet" Type="Self.Blocet" Multiplicity="1" />
           <End Role="Users" Type="Self.Users" Multiplicity="*" />
@@ -298,7 +280,6 @@
           <EntitySet Name="Feivarit" EntityType="Self.Feivarit" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="GameComments" EntityType="Self.GameComments" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Games" EntityType="Self.Games" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Librarys" EntityType="Self.Librarys" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="LibrarysGames" EntityType="Self.LibrarysGames" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Prodactions" EntityType="Self.Prodactions" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Reiteg" EntityType="Self.Reiteg" Schema="dbo" store:Type="Tables" />
@@ -350,10 +331,6 @@
           </AssociationSet>
           <AssociationSet Name="FK_LibrarysGames_Games" Association="Self.FK_LibrarysGames_Games">
             <End Role="Games" EntitySet="Games" />
-            <End Role="LibrarysGames" EntitySet="LibrarysGames" />
-          </AssociationSet>
-          <AssociationSet Name="FK_LibrarysGames_Librarys" Association="Self.FK_LibrarysGames_Librarys">
-            <End Role="Librarys" EntitySet="Librarys" />
             <End Role="LibrarysGames" EntitySet="LibrarysGames" />
           </AssociationSet>
           <AssociationSet Name="FK_Users_Blocet" Association="Self.FK_Users_Blocet">
@@ -422,14 +399,6 @@
           <NavigationProperty Name="Users" Relationship="Self.FK_GameComments_Users" FromRole="GameComments" ToRole="Users" />
           <NavigationProperty Name="Games" Relationship="RsteamModel.FK_GameComments_Games" FromRole="GameComments" ToRole="Games" />
         </EntityType>
-        <EntityType Name="Librarys">
-          <Key>
-            <PropertyRef Name="id_library" />
-          </Key>
-          <Property Name="id_library" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="User_id" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="LibrarysGames" Relationship="Self.FK_LibrarysGames_Librarys" FromRole="Librarys" ToRole="LibrarysGames" />
-        </EntityType>
         <EntityType Name="LibrarysGames">
           <Key>
             <PropertyRef Name="id_LibGame" />
@@ -438,7 +407,6 @@
           <Property Name="Game_id" Type="Int32" Nullable="false" />
           <Property Name="Library_id" Type="Int32" Nullable="false" />
           <Property Name="LastStartDate" Type="DateTime" Precision="3" />
-          <NavigationProperty Name="Librarys" Relationship="Self.FK_LibrarysGames_Librarys" FromRole="LibrarysGames" ToRole="Librarys" />
           <NavigationProperty Name="Games" Relationship="RsteamModel.FK_LibrarysGames_Games" FromRole="LibrarysGames" ToRole="Games" />
         </EntityType>
         <EntityType Name="Prodactions">
@@ -569,18 +537,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_LibrarysGames_Librarys">
-          <End Role="Librarys" Type="Self.Librarys" Multiplicity="1" />
-          <End Role="LibrarysGames" Type="Self.LibrarysGames" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Librarys">
-              <PropertyRef Name="id_library" />
-            </Principal>
-            <Dependent Role="LibrarysGames">
-              <PropertyRef Name="Library_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Users_Roles">
           <End Role="Roles" Type="Self.Roles" Multiplicity="1" />
           <End Role="Users" Type="Self.Users" Multiplicity="*" />
@@ -599,7 +555,6 @@
           <EntitySet Name="Creaters" EntityType="Self.Creaters" />
           <EntitySet Name="Feivarit" EntityType="Self.Feivarit" />
           <EntitySet Name="GameComments" EntityType="Self.GameComments" />
-          <EntitySet Name="Librarys" EntityType="Self.Librarys" />
           <EntitySet Name="LibrarysGames" EntityType="Self.LibrarysGames" />
           <EntitySet Name="Prodactions" EntityType="Self.Prodactions" />
           <EntitySet Name="Reiteg" EntityType="Self.Reiteg" />
@@ -633,10 +588,6 @@
             <End Role="Users" EntitySet="Users" />
             <End Role="GameComments" EntitySet="GameComments" />
           </AssociationSet>
-          <AssociationSet Name="FK_LibrarysGames_Librarys" Association="Self.FK_LibrarysGames_Librarys">
-            <End Role="Librarys" EntitySet="Librarys" />
-            <End Role="LibrarysGames" EntitySet="LibrarysGames" />
-          </AssociationSet>
           <AssociationSet Name="FK_Users_Roles" Association="Self.FK_Users_Roles">
             <End Role="Roles" EntitySet="Roles" />
             <End Role="Users" EntitySet="Users" />
@@ -666,7 +617,7 @@
             <End Role="Games" EntitySet="Games" />
             <End Role="LibrarysGames" EntitySet="LibrarysGames" />
           </AssociationSet>
-        </EntityContainer>
+          </EntityContainer>
         <EntityType Name="Games">
           <Key>
             <PropertyRef Name="id_game" />
@@ -680,6 +631,7 @@
           <Property Name="Reiting_id" Type="Int32" Nullable="false" />
           <Property Name="IsBlocet" Type="Int32" />
           <Property Name="PathFoGame" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Diskription" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Blocet" Relationship="RsteamModel.FK_Games_Blocet" FromRole="Games" ToRole="Blocet" />
           <NavigationProperty Name="Feivarit" Relationship="RsteamModel.FK_Feivarit_Games" FromRole="Games" ToRole="Feivarit" />
           <NavigationProperty Name="GameComments" Relationship="RsteamModel.FK_GameComments_Games" FromRole="Games" ToRole="GameComments" />
@@ -759,7 +711,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
@@ -809,14 +761,6 @@
                 <ScalarProperty Name="User_id" ColumnName="User_id" />
                 <ScalarProperty Name="Game_id" ColumnName="Game_id" />
                 <ScalarProperty Name="IsBlocet" ColumnName="IsBlocet" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Librarys">
-            <EntityTypeMapping TypeName="RsteamModel.Librarys">
-              <MappingFragment StoreEntitySet="Librarys">
-                <ScalarProperty Name="id_library" ColumnName="id_library" />
-                <ScalarProperty Name="User_id" ColumnName="User_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -871,6 +815,7 @@
           <EntitySetMapping Name="Games">
             <EntityTypeMapping TypeName="RsteamModel.Games">
               <MappingFragment StoreEntitySet="Games">
+                <ScalarProperty Name="Diskription" ColumnName="Diskription" />
                 <ScalarProperty Name="PathFoGame" ColumnName="PathFoGame" />
                 <ScalarProperty Name="IsBlocet" ColumnName="IsBlocet" />
                 <ScalarProperty Name="Reiting_id" ColumnName="Reiting_id" />

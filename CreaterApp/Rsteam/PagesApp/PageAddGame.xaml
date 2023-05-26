@@ -12,6 +12,8 @@
         <StackPanel>
             <TextBlock Text="Название"/>
             <TextBox x:Name="TxtName"/>
+            <TextBlock Text="Описание"/>
+            <TextBox x:Name="TxtDis"/>
             <TextBlock Text="Сервер назначения"/>
             <TextBox x:Name="TxtPath"/>
             <TextBlock Text="Фото"/>

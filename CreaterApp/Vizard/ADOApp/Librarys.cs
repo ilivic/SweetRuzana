@@ -22,8 +22,10 @@ namespace Vizard.ADOApp
     
         public int id_library { get; set; }
         public int User_id { get; set; }
+        public System.DateTime DataCreate { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<LibrarysGames> LibrarysGames { get; set; }
+        public virtual Users Users { get; set; }
     }
 }

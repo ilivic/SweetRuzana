@@ -10,7 +10,6 @@
         <EntityTypeShape EntityType="RsteamModel.Creaters" Width="1.5" PointX="5.25" PointY="1.125" IsExpanded="true" />
         <EntityTypeShape EntityType="RsteamModel.Feivarit" Width="1.5" PointX="8.25" PointY="6.25" IsExpanded="true" />
         <EntityTypeShape EntityType="RsteamModel.GameComments" Width="1.5" PointX="3" PointY="7.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="RsteamModel.Games" Width="1.5" PointX="6" PointY="7.25" IsExpanded="true" />
         <EntityTypeShape EntityType="RsteamModel.Librarys" Width="1.5" PointX="6" PointY="12.375" IsExpanded="true" />
         <EntityTypeShape EntityType="RsteamModel.LibrarysGames" Width="1.5" PointX="8.25" PointY="9.125" IsExpanded="true" />
         <EntityTypeShape EntityType="RsteamModel.Prodactions" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
@@ -19,19 +18,29 @@
         <EntityTypeShape EntityType="RsteamModel.Users" Width="1.5" PointX="3" PointY="3.375" IsExpanded="true" />
         <AssociationConnector Association="RsteamModel.FK_Balances_Users" ManuallyRouted="false" />
         <AssociationConnector Association="RsteamModel.FK_GameComments_Blocet" ManuallyRouted="false" />
-        <AssociationConnector Association="RsteamModel.FK_Games_Blocet" ManuallyRouted="false" />
         <AssociationConnector Association="RsteamModel.FK_Users_Blocet" ManuallyRouted="false" />
         <AssociationConnector Association="RsteamModel.FK_Creaters_Prodactions" ManuallyRouted="false" />
         <AssociationConnector Association="RsteamModel.FK_Creaters_Users" ManuallyRouted="false" />
-        <AssociationConnector Association="RsteamModel.FK_Feivarit_Games" ManuallyRouted="false" />
         <AssociationConnector Association="RsteamModel.FK_Feivarit_Users" ManuallyRouted="false" />
-        <AssociationConnector Association="RsteamModel.FK_GameComments_Games" ManuallyRouted="false" />
         <AssociationConnector Association="RsteamModel.FK_GameComments_Users" ManuallyRouted="false" />
-        <AssociationConnector Association="RsteamModel.FK_Games_Prodactions" ManuallyRouted="false" />
-        <AssociationConnector Association="RsteamModel.FK_Games_Reiteg" ManuallyRouted="false" />
-        <AssociationConnector Association="RsteamModel.FK_LibrarysGames_Games" ManuallyRouted="false" />
         <AssociationConnector Association="RsteamModel.FK_LibrarysGames_Librarys" ManuallyRouted="false" />
         <AssociationConnector Association="RsteamModel.FK_Users_Roles" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="RsteamModel.AnswerAppeal" Width="1.5" PointX="10.5" PointY="3.5" />
+        <EntityTypeShape EntityType="RsteamModel.Appeal" Width="1.5" PointX="8.25" PointY="2" />
+        <EntityTypeShape EntityType="RsteamModel.AppealCloseType" Width="1.5" PointX="6" PointY="15.5" />
+        <EntityTypeShape EntityType="RsteamModel.sysdiagrams" Width="1.5" PointX="10.375" PointY="0.75" />
+        <AssociationConnector Association="RsteamModel.FK_AnswerAppeal_Appeal" />
+        <AssociationConnector Association="RsteamModel.FK_AnswerAppeal_Users" />
+        <AssociationConnector Association="RsteamModel.FK_Appeal_AppealCloseType" />
+        <AssociationConnector Association="RsteamModel.FK_Appeal_Users" />
+        <EntityTypeShape EntityType="RsteamModel.Games" Width="1.5" PointX="11" PointY="6.875" />
+        <AssociationConnector Association="RsteamModel.FK_Games_Blocet" />
+        <AssociationConnector Association="RsteamModel.FK_Feivarit_Games" />
+        <AssociationConnector Association="RsteamModel.FK_GameComments_Games" />
+        <AssociationConnector Association="RsteamModel.FK_Games_Prodactions" />
+        <AssociationConnector Association="RsteamModel.FK_Games_Reiteg" />
+        <AssociationConnector Association="RsteamModel.FK_LibrarysGames_Games" />
+        <AssociationConnector Association="RsteamModel.FK_Librarys_Users" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -19,7 +19,6 @@ namespace Rsteam.ADOApp
         public int Library_id { get; set; }
         public Nullable<System.DateTime> LastStartDate { get; set; }
     
-        public virtual Librarys Librarys { get; set; }
         public virtual Games Games { get; set; }
     }
 }
