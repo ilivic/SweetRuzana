@@ -8,6 +8,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("adoapp/model1.context.tt")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("adoapp/model1.tt")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("adoapp/modelvizard.context.tt")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("adoapp/modelvizard.tt")]
 

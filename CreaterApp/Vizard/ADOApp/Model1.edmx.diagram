@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="78e3876dd93f4e84a11c9dd11dc5855b" Name="Diagram1">
+        <EntityTypeShape EntityType="RsteamModel1.Balances" Width="1.5" PointX="5.25" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="RsteamModel1.Blocet" Width="1.5" PointX="0.75" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="RsteamModel1.Creaters" Width="1.5" PointX="5.25" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="RsteamModel1.Feivarit" Width="1.5" PointX="8.25" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="RsteamModel1.GameComments" Width="1.5" PointX="3" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="RsteamModel1.Games" Width="1.5" PointX="6" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="RsteamModel1.Librarys" Width="1.5" PointX="6" PointY="12.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="RsteamModel1.LibrarysGames" Width="1.5" PointX="8.25" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="RsteamModel1.Prodactions" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RsteamModel1.Reiteg" Width="1.5" PointX="3.75" PointY="11.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="RsteamModel1.Roles" Width="1.5" PointX="0.75" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="RsteamModel1.sysdiagrams" Width="1.5" PointX="7.75" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="RsteamModel1.Users" Width="1.5" PointX="3" PointY="3.375" IsExpanded="true" />
+        <AssociationConnector Association="RsteamModel1.FK_Balances_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="RsteamModel1.FK_GameComments_Blocet" ManuallyRouted="false" />
+        <AssociationConnector Association="RsteamModel1.FK_Games_Blocet" ManuallyRouted="false" />
+        <AssociationConnector Association="RsteamModel1.FK_Users_Blocet" ManuallyRouted="false" />
+        <AssociationConnector Association="RsteamModel1.FK_Creaters_Prodactions" ManuallyRouted="false" />
+        <AssociationConnector Association="RsteamModel1.FK_Creaters_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="RsteamModel1.FK_Feivarit_Games" ManuallyRouted="false" />
+        <AssociationConnector Association="RsteamModel1.FK_Feivarit_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="RsteamModel1.FK_GameComments_Games" ManuallyRouted="false" />
+        <AssociationConnector Association="RsteamModel1.FK_GameComments_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="RsteamModel1.FK_Games_Prodactions" ManuallyRouted="false" />
+        <AssociationConnector Association="RsteamModel1.FK_Games_Reiteg" ManuallyRouted="false" />
+        <AssociationConnector Association="RsteamModel1.FK_LibrarysGames_Games" ManuallyRouted="false" />
+        <AssociationConnector Association="RsteamModel1.FK_LibrarysGames_Librarys" ManuallyRouted="false" />
+        <AssociationConnector Association="RsteamModel1.FK_Users_Roles" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="RsteamModel1.AnswerAppeal" Width="1.5" PointX="12.5" PointY="3.5" />
+        <EntityTypeShape EntityType="RsteamModel1.Appeal" Width="1.5" PointX="10.25" PointY="2" />
+        <EntityTypeShape EntityType="RsteamModel1.AppealCloseType" Width="1.5" PointX="8" PointY="15.5" />
+        <AssociationConnector Association="RsteamModel1.FK_AnswerAppeal_Appeal" />
+        <AssociationConnector Association="RsteamModel1.FK_AnswerAppeal_Users" />
+        <AssociationConnector Association="RsteamModel1.FK_Appeal_AppealCloseType" />
+        <AssociationConnector Association="RsteamModel1.FK_Appeal_Users" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

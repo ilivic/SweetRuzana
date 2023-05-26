@@ -21,6 +21,8 @@ namespace Vizard.ADOApp
             this.Creaters = new HashSet<Creaters>();
             this.Feivarit = new HashSet<Feivarit>();
             this.GameComments = new HashSet<GameComments>();
+            this.AnswerAppeal = new HashSet<AnswerAppeal>();
+            this.Appeal = new HashSet<Appeal>();
         }
     
         public int id_user { get; set; }
@@ -42,5 +44,9 @@ namespace Vizard.ADOApp
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<GameComments> GameComments { get; set; }
         public virtual Roles Roles { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<AnswerAppeal> AnswerAppeal { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Appeal> Appeal { get; set; }
     }
 }

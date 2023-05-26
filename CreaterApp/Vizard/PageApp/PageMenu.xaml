@@ -17,7 +17,7 @@
             <RowDefinition/>
             <RowDefinition Height="8*"/>
         </Grid.RowDefinitions>
-        <Button Content="Open"/>
+        <Button Content="Open" Click="ClEventOpenPage"/>
         <StackPanel Grid.Column="1">
             <ComboBox x:Name="CMBSelection">
                 <ComboBoxItem>
@@ -32,7 +32,11 @@
                 <ComboBoxItem>
                     <TextBlock Text="Profil"/>
                 </ComboBoxItem>
+                <ComboBoxItem>
+                    <TextBlock Text="Appeals"/>
+                </ComboBoxItem>
             </ComboBox>
         </StackPanel>
+        <Frame Grid.Column="1" Grid.Row="1" x:Name="MainNaviFrame" NavigationUIVisibility="Hidden"/>
     </Grid>
 </Page>

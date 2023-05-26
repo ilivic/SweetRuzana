@@ -68,7 +68,43 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="PageApp\PageBlockComment.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageApp\PageBlockGame.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageApp\PageBlockUser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageApp\PageEditAkk.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="PageApp\PageMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageApp\PageShowAppeal.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageApp\PageShowComments.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageApp\PageShowGameFoBLock.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageApp\PageShowUserFoBlock.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageApp\PageUltimateAnswer.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -76,29 +112,53 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Compile Include="ADOApp\AnswerAppeal.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ADOApp\Appeal.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ADOApp\AppealCloseType.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="ADOApp\Balances.cs">
-      <DependentUpon>ModelVizard.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="ADOApp\Blocet.cs">
-      <DependentUpon>ModelVizard.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="ADOApp\Creaters.cs">
-      <DependentUpon>ModelVizard.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="ADOApp\Feivarit.cs">
-      <DependentUpon>ModelVizard.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="ADOApp\GameComments.cs">
-      <DependentUpon>ModelVizard.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="ADOApp\Games.cs">
-      <DependentUpon>ModelVizard.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="ADOApp\Librarys.cs">
-      <DependentUpon>ModelVizard.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="ADOApp\LibrarysGames.cs">
-      <DependentUpon>ModelVizard.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ADOApp\Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ADOApp\Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ADOApp\Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
     <Compile Include="ADOApp\ModelVizard.Context.cs">
       <AutoGen>True</AutoGen>
@@ -116,16 +176,19 @@
       <DependentUpon>ModelVizard.edmx</DependentUpon>
     </Compile>
     <Compile Include="ADOApp\Prodactions.cs">
-      <DependentUpon>ModelVizard.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="ADOApp\Reiteg.cs">
-      <DependentUpon>ModelVizard.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="ADOApp\Roles.cs">
-      <DependentUpon>ModelVizard.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ADOApp\sysdiagrams.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="ADOApp\Users.cs">
-      <DependentUpon>ModelVizard.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
@@ -135,8 +198,35 @@
     <Compile Include="PageApp\PageAuthorization.xaml.cs">
       <DependentUpon>PageAuthorization.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PageApp\PageBlockComment.xaml.cs">
+      <DependentUpon>PageBlockComment.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageApp\PageBlockGame.xaml.cs">
+      <DependentUpon>PageBlockGame.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageApp\PageBlockUser.xaml.cs">
+      <DependentUpon>PageBlockUser.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageApp\PageEditAkk.xaml.cs">
+      <DependentUpon>PageEditAkk.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PageApp\PageMenu.xaml.cs">
       <DependentUpon>PageMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageApp\PageShowAppeal.xaml.cs">
+      <DependentUpon>PageShowAppeal.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageApp\PageShowComments.xaml.cs">
+      <DependentUpon>PageShowComments.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageApp\PageShowGameFoBLock.xaml.cs">
+      <DependentUpon>PageShowGameFoBLock.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageApp\PageShowUserFoBlock.xaml.cs">
+      <DependentUpon>PageShowUserFoBlock.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageApp\PageUltimateAnswer.xaml.cs">
+      <DependentUpon>PageUltimateAnswer.xaml</DependentUpon>
     </Compile>
     <Compile Include="WIndowsApp\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -165,6 +255,13 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>ModelVizard.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <EntityDeploy Include="ADOApp\Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="ADOApp\Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </None>
     <None Include="ADOApp\ModelVizard.edmx.diagram">
       <DependentUpon>ModelVizard.edmx</DependentUpon>
     </None>
@@ -179,6 +276,16 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Content Include="ADOApp\Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="ADOApp\Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
     <Content Include="ADOApp\ModelVizard.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>ModelVizard.Context.cs</LastGenOutput>

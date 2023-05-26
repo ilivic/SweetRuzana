@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище RsteamModel1Container" CdmEntityContainer="RsteamEntities1">
+    <EntitySetMapping Name="Balances">
+      <EntityTypeMapping TypeName="RsteamModel1.Balances">
+        <MappingFragment StoreEntitySet="Balances">
+          <ScalarProperty Name="id_balance" ColumnName="id_balance" />
+          <ScalarProperty Name="User_id" ColumnName="User_id" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Blocet">
+      <EntityTypeMapping TypeName="RsteamModel1.Blocet">
+        <MappingFragment StoreEntitySet="Blocet">
+          <ScalarProperty Name="Id_blocet" ColumnName="Id_blocet" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Creaters">
+      <EntityTypeMapping TypeName="RsteamModel1.Creaters">
+        <MappingFragment StoreEntitySet="Creaters">
+          <ScalarProperty Name="Id_creater" ColumnName="Id_creater" />
+          <ScalarProperty Name="Prodaction_id" ColumnName="Prodaction_id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="User_id" ColumnName="User_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Feivarit">
+      <EntityTypeMapping TypeName="RsteamModel1.Feivarit">
+        <MappingFragment StoreEntitySet="Feivarit">
+          <ScalarProperty Name="id_feit" ColumnName="id_feit" />
+          <ScalarProperty Name="User_id" ColumnName="User_id" />
+          <ScalarProperty Name="Game_id" ColumnName="Game_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GameComments">
+      <EntityTypeMapping TypeName="RsteamModel1.GameComments">
+        <MappingFragment StoreEntitySet="GameComments">
+          <ScalarProperty Name="id_GameComment" ColumnName="id_GameComment" />
+          <ScalarProperty Name="Text" ColumnName="Text" />
+          <ScalarProperty Name="User_id" ColumnName="User_id" />
+          <ScalarProperty Name="Game_id" ColumnName="Game_id" />
+          <ScalarProperty Name="IsBlocet" ColumnName="IsBlocet" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Games">
+      <EntityTypeMapping TypeName="RsteamModel1.Games">
+        <MappingFragment StoreEntitySet="Games">
+          <ScalarProperty Name="id_game" ColumnName="id_game" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
+          <ScalarProperty Name="prodaction_id" ColumnName="prodaction_id" />
+          <ScalarProperty Name="DataCreate" ColumnName="DataCreate" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Reiting_id" ColumnName="Reiting_id" />
+          <ScalarProperty Name="IsBlocet" ColumnName="IsBlocet" />
+          <ScalarProperty Name="PathFoGame" ColumnName="PathFoGame" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Librarys">
+      <EntityTypeMapping TypeName="RsteamModel1.Librarys">
+        <MappingFragment StoreEntitySet="Librarys">
+          <ScalarProperty Name="id_library" ColumnName="id_library" />
+          <ScalarProperty Name="User_id" ColumnName="User_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LibrarysGames">
+      <EntityTypeMapping TypeName="RsteamModel1.LibrarysGames">
+        <MappingFragment StoreEntitySet="LibrarysGames">
+          <ScalarProperty Name="id_LibGame" ColumnName="id_LibGame" />
+          <ScalarProperty Name="Game_id" ColumnName="Game_id" />
+          <ScalarProperty Name="Library_id" ColumnName="Library_id" />
+          <ScalarProperty Name="LastStartDate" ColumnName="LastStartDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Prodactions">
+      <EntityTypeMapping TypeName="RsteamModel1.Prodactions">
+        <MappingFragment StoreEntitySet="Prodactions">
+          <ScalarProperty Name="id_prodaction" ColumnName="id_prodaction" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Reiteg">
+      <EntityTypeMapping TypeName="RsteamModel1.Reiteg">
+        <MappingFragment StoreEntitySet="Reiteg">
+          <ScalarProperty Name="id_reiting" ColumnName="id_reiting" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Roles">
+      <EntityTypeMapping TypeName="RsteamModel1.Roles">
+        <MappingFragment StoreEntitySet="Roles">
+          <ScalarProperty Name="id_role" ColumnName="id_role" />
+          <ScalarProperty Name="Titlel" ColumnName="Titlel" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="RsteamModel1.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="RsteamModel1.Users">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="id_user" ColumnName="id_user" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="XName" ColumnName="XName" />
+          <ScalarProperty Name="Login" ColumnName="Login" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
+          <ScalarProperty Name="Role_id" ColumnName="Role_id" />
+          <ScalarProperty Name="IsBlocet" ColumnName="IsBlocet" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AnswerAppeal">
+      <EntityTypeMapping TypeName="RsteamModel1.AnswerAppeal">
+        <MappingFragment StoreEntitySet="AnswerAppeal">
+          <ScalarProperty Name="DateAnswer" ColumnName="DateAnswer" />
+          <ScalarProperty Name="Appeal_id" ColumnName="Appeal_id" />
+          <ScalarProperty Name="User_id" ColumnName="User_id" />
+          <ScalarProperty Name="Text" ColumnName="Text" />
+          <ScalarProperty Name="id_Answer" ColumnName="id_Answer" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Appeal">
+      <EntityTypeMapping TypeName="RsteamModel1.Appeal">
+        <MappingFragment StoreEntitySet="Appeal">
+          <ScalarProperty Name="isClose" ColumnName="isClose" />
+          <ScalarProperty Name="MediaElement" ColumnName="MediaElement" />
+          <ScalarProperty Name="IsVisibli" ColumnName="IsVisibli" />
+          <ScalarProperty Name="DateAppeal" ColumnName="DateAppeal" />
+          <ScalarProperty Name="User_id" ColumnName="User_id" />
+          <ScalarProperty Name="Text" ColumnName="Text" />
+          <ScalarProperty Name="id_Appeal" ColumnName="id_Appeal" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AppealCloseType">
+      <EntityTypeMapping TypeName="RsteamModel1.AppealCloseType">
+        <MappingFragment StoreEntitySet="AppealCloseType">
+          <ScalarProperty Name="Color" ColumnName="Color" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="id_ACT" ColumnName="id_ACT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

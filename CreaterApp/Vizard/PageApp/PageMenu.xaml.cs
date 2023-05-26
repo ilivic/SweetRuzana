@@ -24,5 +24,38 @@ namespace Vizard.PageApp
         {
             InitializeComponent();
         }
+
+        private void ClEventOpenPage(object sender, RoutedEventArgs e)
+        {
+            switch (CMBSelection.Text)
+            {
+                case "Users":
+                    {
+                        MainNaviFrame.NavigationService.Navigate(new PageShowUserFoBlock());
+                        break;
+                    }
+                case "Games":
+                    {
+                        MainNaviFrame.NavigationService.Navigate(new PageShowGameFoBLock());
+                        break;
+                    }
+                case "Coments":
+                    {
+                        MainNaviFrame.NavigationService.Navigate(new PageShowComments());
+                        break;
+                    }
+                case "Profil":
+                    {
+                        MainNaviFrame.NavigationService.Navigate(new PageEditAkk());
+                        break;
+                    }
+                case "Appeals":
+                    {
+                        MainNaviFrame.NavigationService.Navigate(new PageShowAppeal());
+                        break;
+                    }
+            }
+        }
+        
     }
 }

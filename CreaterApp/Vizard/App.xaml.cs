@@ -14,6 +14,6 @@ namespace Vizard
     /// </summary>
     public partial class App : Application
     {
-        public static RsteamEntities Connection = new RsteamEntities();
+        public static RsteamEntities1 Connection = new RsteamEntities1();
     }
 }
